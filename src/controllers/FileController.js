@@ -2,7 +2,7 @@ const File = require("../models/File");
 const Box = require("../models/Box");
 
 
-class FileCrontroller{
+class FileController{
     async store(req,res){
         const box = await Box.findById(req.params.id);
         
