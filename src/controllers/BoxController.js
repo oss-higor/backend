@@ -1,6 +1,6 @@
 const Box = require('../models/Box');
 
-class BoxCrontroller{
+class BoxController{
     async store(req,res){
        
        const box = await Box.create({title: req.body.title}); 
@@ -8,11 +8,11 @@ class BoxCrontroller{
     }
     async show(req,res){
       const box = await Box.findById(req.params.id).populate({
-          path: 'files',
+          path: "files",
           options: { sort: {createdAt: -1}}
       })
     
       return res.json(box)
     }
 }
-module.exports=new BoxCrontroller();
+module.exports=new BoxController();

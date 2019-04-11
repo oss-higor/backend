@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const File = new mongoose.Schema({ //tabela
+const File = new mongoose.Schema({ 
     title:{
         type: String,
         required: true,
@@ -17,7 +17,7 @@ const File = new mongoose.Schema({ //tabela
 }
 );
 
-File.virtual('url').get(function(){
+File.virtual("url").get(function(){
     const url = process.env.URL ||'http:localhost:4444'
     return `${url}/files/${encodeURIComponent(this.path)}` 
 })
