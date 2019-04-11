@@ -15,7 +15,7 @@ class FileCrontroller{
 
        await box.save();
 
-       req.io.sockets.in(box._id).emit("file",file);  
+       req.io.sockets.in(box._id).emit('file', file)
 
        return res.json(file);
       
