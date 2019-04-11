@@ -15,7 +15,7 @@ const File = new mongoose.Schema({ //tabela
     toObject: { virtuals : true},
     toJSON: {virtuals : true}
 }
-)
+);
 
 File.virtual('url').get(function(){
     const url = process.env.URL ||'http:localhost:4444'
